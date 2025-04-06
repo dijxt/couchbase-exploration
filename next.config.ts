@@ -1,7 +1,11 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    reactStrictMode: true,
+    // On désactive les lint pour l'exemple
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
+    // Ajout d'une config pour utiliser le transpileur SWC avec React
+    swcMinify: true,
 };
-
-export default nextConfig;
+module.exports = nextConfig;

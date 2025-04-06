@@ -1,0 +1,23 @@
+version: '3'
+services:
+  couchbase1:
+    image: couchbase:latest
+    container_name: couchbase1
+    ports:
+      - "8091:8091"
+      - "11210:11210"
+    networks:
+      - couchbase-network
+
+  couchbase2:
+    image: couchbase:latest
+    container_name: couchbase2
+    ports:
+      - "9191:8091"
+      - "21210:11210"
+    networks:
+      - couchbase-network
+
+networks:
+  couchbase-network:
+    driver: bridge
